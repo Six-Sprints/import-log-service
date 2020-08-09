@@ -14,14 +14,19 @@ public class ImportLogDetailsFieldData {
     LinkedList<FieldDto> fields = new LinkedList<>();
     int i = 0;
 
-    fields.add(FieldDto.builder().name("date").displayName("Date").sequence(i++)
+    fields.add(FieldDto.builder().name("slug").displayName("ID").sequence(i++)
+      .dataType(DataType.TEXT).isLocked(true)
+      .localizedDisplay(ImmutableMap.<Locale, String>of(Locale.ENGLISH, "ID", Locale.JAPANESE, "ID"))
+      .build());
+
+    fields.add(FieldDto.builder().name("dateCreated").displayName("Date").sequence(i++)
       .dataType(DataType.DATE).isLocked(true)
       .localizedDisplay(ImmutableMap.<Locale, String>of(Locale.ENGLISH, "Date", Locale.JAPANESE, "処理日時"))
       .build());
 
-    fields.add(FieldDto.builder().name("userEmail").displayName("User Email").sequence(i++)
+    fields.add(FieldDto.builder().name("createdBy").displayName("User ID").sequence(i++)
       .dataType(DataType.TEXT).isLocked(true)
-      .localizedDisplay(ImmutableMap.<Locale, String>of(Locale.ENGLISH, "User Email", Locale.JAPANESE, "ユーザーID"))
+      .localizedDisplay(ImmutableMap.<Locale, String>of(Locale.ENGLISH, "User ID", Locale.JAPANESE, "ユーザーID"))
       .build());
 
     fields.add(FieldDto.builder().name("entity").displayName("Entity").sequence(i++)
