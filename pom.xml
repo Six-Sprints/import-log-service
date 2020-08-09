@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -49,6 +50,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<classifier>exec</classifier>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
