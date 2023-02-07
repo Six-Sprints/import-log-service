@@ -24,7 +24,7 @@ public class ImportLogDetailsController extends AbstractImportLogDetailsControll
   }
 
   @Override
-  public ResponseEntity<RestResponse<List<FieldDto>>> fields(Locale locale) {
+  public ResponseEntity<RestResponse<List<FieldDto>>> fields() {
     return RestUtil.successResponse(ImportLogDetailsFieldData.fields());
   }
 

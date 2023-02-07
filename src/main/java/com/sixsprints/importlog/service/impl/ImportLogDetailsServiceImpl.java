@@ -16,25 +16,25 @@ public class ImportLogDetailsServiceImpl extends AbstractCrudService<ImportLogDe
   implements ImportLogDetailsService {
 
   @Autowired
-  private ImportLogDetailsRepository ImportLogDetailsRepository;
+  private ImportLogDetailsRepository importLogDetailsRepository;
 
   @Override
   protected ImportLogDetailsRepository repository() {
-    return ImportLogDetailsRepository;
+    return importLogDetailsRepository;
   }
 
   @Override
   protected MetaData<ImportLogDetails> metaData() {
     return MetaData.<ImportLogDetails>builder()
       .classType(ImportLogDetails.class)
-      .dtoClassType(ImportLogDetailsDto.class)
+      .crudDtoClassType(ImportLogDetailsDto.class)
       .fields(ImportLogDetailsFieldData.fields())
       .build();
   }
 
   @Override
   protected ImportLogDetails findDuplicate(ImportLogDetails introScreen) {
-    return ImportLogDetailsRepository.findBySlug(introScreen.getSlug());
+    return importLogDetailsRepository.findBySlug(introScreen.getSlug());
   }
 
 }
